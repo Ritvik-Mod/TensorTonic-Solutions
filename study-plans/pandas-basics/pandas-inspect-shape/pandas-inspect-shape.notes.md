@@ -1,0 +1,1 @@
+for df.dtypes to return o/p as expected we need to do first .astype('str') then .to_dict()
