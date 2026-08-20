@@ -5,6 +5,8 @@ def row_extremes(data):
     data = np.array(data,dtype=np.float64)
     argmax = np.argmax(data,axis=1)
     argmin = np.argmin(data,axis=1)
-    min = data.min(axis=1)
-    max = data.max(axis=1)
+    # min = data.min(axis=1)
+    # max = data.max(axis=1)
+    max = data[np.arange(data.shape[0]),argmax]
+    min = data[np.arange(data.shape[0]),argmin]
     return np.stack([max,argmax,min,argmin])
