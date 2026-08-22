@@ -12,3 +12,5 @@ def matrix_multiply(A, B):
         for j in range(B.shape[1]):
             C[i,j] = np.sum(A[i]*B[:,j])
     return C
+
+    # return A@B
