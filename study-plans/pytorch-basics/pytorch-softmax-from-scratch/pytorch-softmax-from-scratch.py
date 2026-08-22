@@ -11,4 +11,4 @@ def softmax(logits):
 
     den = torch.sum(torch.exp(logits-mi[:,None]),dim=1) #(N,)
 
-    return num/den[:,None]
+    return torch.divide(num,den[:,None])
