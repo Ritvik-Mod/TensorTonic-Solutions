@@ -37,28 +37,40 @@ def unet(x: np.ndarray, num_classes: int = 2) -> np.ndarray:
     # 4 decoder blocks - with skip connections --> each 2*h-4 --> c//2
     # 1 output layer --> same b,h,w | c = num_classes
 
-    #pass to encoder block 1:
-    x = np.zeros(encoder(x))
-    #pass to encoder block 2:
-    x = np.zeros(encoder(x))
-    #pass to encoder block 3:
-    x = np.zeros(encoder(x))
-    #pass to encoder block 4:
-    x = np.zeros(encoder(x))
+    # #pass to encoder block 1:
+    # x = np.zeros(encoder(x))
+    # #pass to encoder block 2:
+    # x = np.zeros(encoder(x))
+    # #pass to encoder block 3:
+    # x = np.zeros(encoder(x))
+    # #pass to encoder block 4:
+    # x = np.zeros(encoder(x))
 
-    #pass to bottleneck block:
+    # #pass to bottleneck block:
+    # x = np.zeros(bottleneck(x))
+
+    # #pass to decoder block 1:
+    # x = np.zeros(decoder(x))
+    # #pass to decoder block 2:
+    # x = np.zeros(decoder(x))
+    # #pass to decoder block 3:
+    # x = np.zeros(decoder(x))
+    # #pass to decoder block 4:
+    # x = np.zeros(decoder(x))
+
+    # #pass to output block:
+    # x = np.zeros(output(x,num_classes))
+
+    # return x
+
+    for i in range(4):
+        x = np.zeros(encoder(x))
+
     x = np.zeros(bottleneck(x))
 
-    #pass to decoder block 1:
-    x = np.zeros(decoder(x))
-    #pass to decoder block 2:
-    x = np.zeros(decoder(x))
-    #pass to decoder block 3:
-    x = np.zeros(decoder(x))
-    #pass to decoder block 4:
-    x = np.zeros(decoder(x))
+    for i in range(4):
+        x = np.zeros(decoder(x))
 
-    #pass to output block:
     x = np.zeros(output(x,num_classes))
 
     return x
