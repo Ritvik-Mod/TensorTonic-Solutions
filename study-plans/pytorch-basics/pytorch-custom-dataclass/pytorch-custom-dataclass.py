@@ -8,7 +8,7 @@ class CSVDataset(Dataset):
 
     def __init__(self, data, label_col):
         self.data = torch.tensor(data,dtype=torch.float32)
-        self.label_col = torch.tensor(label_col,dtype=torch.int32).item()
+        self.label_col = label_col
 
     def __len__(self):
         return len(self.data)
