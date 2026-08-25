@@ -1,10 +1,8 @@
 import numpy as np
 
 def f(c,x):
-    sum = 0.0
-    for k,ck in enumerate(c):
-        sum += ck*(x**k)
-    return sum
+    # return np.dot(c,x**np.array([i for i in range(len(c))]))
+    return np.sum(np.polyval(c[::-1],x))
 
 def finite_difference_derivative(coefficients, x, h):
     """
